@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e4e8eb;
+    /*  фона */
+}
+
+.calculator {
+    border: 2px solid #020608;
+    /*  цвет для рамки */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    /* Белый цвет для области калькулятора */
+}
+
+#display {
+    width: calc(94% - 20px);
+    margin: 10px;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    /* цвет для дисплея */
+}
+
+.buttons {
+    display: grid;
+    border: 1px solid #3498db;
+    /* Синий цвет для рамки кнопок */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #ffffff;
+    /* Белый текст на кнопках */
+    cursor: pointer;
+}
+
+button.memory {
+    background-color: #2196f3;
+    /* Синий цвет для кнопок памяти */
+    color: #fff;
+}
+
+* Активные кнопки будут иметь более светлый синий цвет */ button:active {
+    background-color: #2980b9;
+}
+
+/* Стили для кнопок, не добавляющих цифры на дисплей (операторы, MS, MR) */
+button:not([onclick^="appendToDisplay"]) {
+    background-color: #34495e;
+    /* Темно-синий цвет для этих кнопок */
+}
+
+/* Стили для кнопок, добавляющих цифры на дисплей (цифры, точка) */
+button[onclick^="appendToDisplay"] {
+    background-color: #3498db;
+    /* Синий цвет для этих кнопок */
+}
